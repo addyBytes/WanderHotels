@@ -47,7 +47,7 @@ module.exports.renderNewForm =  (req,res)=>{
   res.render("./listings/edit.ejs" , {ListingHotel,og});
  }
 
- module.exports.updateListing = async (req,res)=>{
+ module.exports.updateListing = async(req,res)=>{
 
   let {id} = req.params;
  

@@ -28,7 +28,7 @@ const upload = multer({ dest: 'uploads/' })
 const dbUrl = process.env.ATLASDB_URL
 const MongoStore = require('connect-mongo');
 
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname,"views"))
 app.use(express.urlencoded({extended : true}))
@@ -68,10 +68,10 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.listen(port, ()=>{
-  console.log(`Server running on port ${port}`);
+// app.listen(port, ()=>{
+//   console.log(`Server running on port ${port}`);
   
-})
+// })
 
 
 
