@@ -16,7 +16,7 @@ module.exports.renderNewForm =  (req,res)=>{
  const ListingHotel = await Listing.findById(id).populate({path :"reviews", populate:{path:"author"}}).populate("owner");
   if(!ListingHotel){
    req.flash("error", "Listing does not exists")
-   res.redirect("/listings");
+   return res.redirect("/listings");
   }
   res.render("./listings/show.ejs" , {ListingHotel});
  }
@@ -40,7 +40,7 @@ module.exports.renderNewForm =  (req,res)=>{
   req.flash("success", "Listing Edited")
   if(!ListingHotel){
    req.flash("error", "Listing does not exists")
-   res.redirect("/listings");
+   return res.redirect("/listings");
   }
   let og = ListingHotel.image.url;
   og = og.replace("/upload", "/upload/h_250,w_100")
