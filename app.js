@@ -28,7 +28,7 @@ const upload = multer({ dest: 'uploads/' })
 const dbUrl = process.env.ATLASDB_URL
 const MongoStore = require('connect-mongo');
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname,"views"))
